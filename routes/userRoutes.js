@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import rateLimit from "express-rate-limit";
 import upload from "../middleware/multer.js";
-import cloudinary from "../config/Cloudinary.js";
+import cloudinary from "../config/cloudinary.js";
 import User from "../models/User.js";
 import Driver from "../models/Driver.js";
 import Otp from "../models/Otp.js";
@@ -89,7 +89,6 @@ router.post("/register", async (req, res) => {
     const savedUser = await newUser.save();
     console.log("✅ User registered:", savedUser?.id);
 
-    // 🟢 Create blank driver profile if needed
     if (userRole.includes("driver")) {
       const newDriver = new Driver({
         user: savedUser?.id,
