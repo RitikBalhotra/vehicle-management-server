@@ -25,7 +25,7 @@ const uploadToCloudinary = async (file) => {
       }
     );
 
-    Readable.from(file.buffer).pipe(stream); // ✅ buffer is iterable
+    Readable.from(file.buffer).pipe(stream);
   });
 };
 
@@ -125,7 +125,7 @@ router.put(
       if (req.files && req.files.length > 0) {
         const photoUrls = [];
         for (let file of req.files) {
-          const uploaded = await uploadToCloudinary(file);
+          const uploaded = await uploadToCloudinary(file, "VMS/VehiclePhotos");
           photoUrls.push(uploaded.secure_url);
         }
         updateData.vehiclePhotos = photoUrls;
