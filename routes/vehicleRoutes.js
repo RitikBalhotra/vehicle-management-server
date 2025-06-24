@@ -4,7 +4,7 @@ import auth from "../middleware/auth.js";
 import Vehicle from "../models/Vehicle.js";
 import User from "../models/User.js";
 import { Readable } from "stream";
-import cloudinary from "../config/Cloudinary.js";
+import cloudinary from "../config/cloudinary.js";
 import Driver from "../models/Driver.js";
 
 const router = express.Router();
