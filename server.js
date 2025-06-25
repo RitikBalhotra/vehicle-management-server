@@ -15,8 +15,7 @@ const app = express();
 app.use(cors({
   origin: [process.env.FRONTEND_ORIGIN1, process.env.FRONTEND_ORIGIN2],
   credentials: true,
-  methods:'*',
-  allowedHeaders:true
+
 }));
 app.use(express.json());
 
