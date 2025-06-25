@@ -99,7 +99,7 @@ router.get("/vehiclelist", auth, async (req, res) => {
 });
 
 // Get single vehicle
-router.get("/:id", auth, async (req, res) => {
+router.get("/getvehicle/:id", auth, async (req, res) => {
   try {
     const vehicle = await Vehicle.findById(req.params.id);
     if (!vehicle) return res.status(404).json({ message: "Vehicle not found" });
