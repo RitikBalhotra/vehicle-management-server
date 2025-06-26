@@ -110,8 +110,7 @@ router.get("/getvehicle/:id", auth, async (req, res) => {
 });
 
 // Update vehicle
-router.put(
-  "/updatevehicle/:id",
+router.put("/vehicle/update/:id",
   auth,
   upload.array("vehiclePhotos"),
   async (req, res) => {
